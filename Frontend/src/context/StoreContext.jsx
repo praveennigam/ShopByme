@@ -10,7 +10,7 @@ const StoreContextProvider = (props) => {
   const [promoCode, setPromoCode] = useState("");
   const [discountApplied, setDiscountApplied] = useState(false);
   const [discountAmount, setDiscountAmount] = useState(0);
-  const url = "https://shopping-ofij.onrender.com";
+  const url = "https://e-combypraveen.onrender.com";
 
   const addToCart = async (itemId, size = null) => {
     const newCart = { ...cartItem };
