@@ -1,0 +1,205 @@
+.place-order {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.place-order-left {
+    width: 100%;
+    max-width: max(30%, 500px);
+}
+
+.place-order-left .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.place-order-left input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c3c5c2;
+    border-radius: 7px;
+    outline-color: tomato;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.place-order-left .multi-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.place-order-right {
+    width: 100%;
+    margin-top: 80px;
+    max-width: max(40%, 500px);
+}
+
+.place-order-right .cart-total button {
+    margin-top: 40px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    background-color: tomato;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.place-order-right .cart-total button:hover {
+    background-color: darkred;
+}
+
+.place-order-promocode {
+    margin-top: 30px;
+}
+
+.place-order-promocode input {
+    width: 80%;
+    padding: 8px;
+    border: 0.3px solid #c3c5c2;
+    border-radius: 4px;
+    outline-color: tomato;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-right: 15px;
+}
+
+.place-order-promocode button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 7px;
+    background-color: tomato;
+    color: #f7f6f6;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.place-order-promocode button:hover {
+    background-color: rgb(99, 20, 7);
+}
+
+.place-order-coupons {
+    margin-top: 20px;
+    padding: 20px;
+    align-items: center;
+    border-radius: 8px;
+    border: #1c1616 1px solid;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    /* Needed for close button positioning */
+}
+
+.place-order-coupons .close-coupons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(196, 46, 19);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.place-order-coupons .close-coupons:hover {
+    background-color: darkred;
+}
+
+.place-order-coupons ul {
+    list-style-type: none;
+    color: tomato;
+    margin-left: 33%;
+}
+
+.hcoupon {
+    color: rgb(118, 21, 4);
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 25px;
+}
+
+.place-order-coupons li {
+    padding: 5px 0;
+    color: #1c1616;
+    font-size: 14px;
+    font-weight: 780;
+}
+
+@media (max-width: 1170px) {
+    .place-order {
+        gap: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .place-order-left {
+        max-width: 90%;
+    }
+    .place-order-right {
+        margin-top: 40px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 390px) {
+    .place-order-left .title {
+        font-size: 24px;
+    }
+    .place-order-left input {
+        padding: 8px;
+    }
+    .place-order-right .cart-total button {
+        margin-top: 20px;
+    }
+}
+
+.total-buttona {
+    background-color: tomato;
+}
+
+.total-buttona:hover {
+    background-color: darkred;
+}
+
+.place-order-coupons ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: tomato;
+    margin-left: 33%;
+}
+
+.coupon-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.coupon-item:hover {
+    background-color: #f0f0f0;
+}
+
+.place-order-coupons {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+}

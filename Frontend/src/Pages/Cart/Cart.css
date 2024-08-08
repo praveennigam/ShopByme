@@ -1,0 +1,169 @@
+.cart {
+    margin-top: 100px;
+}
+
+.cart-item-title {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    color: rgb(152, 152, 152);
+    font-size: max(1vw, 12px);
+}
+
+.cart-item-items {
+    margin: 10px 0;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-items img {
+    width: 50px;
+    border-radius: 7px;
+}
+
+.cart-item-items .cross {
+    cursor: pointer;
+    color: red;
+    /* Optional: to highlight the remove button */
+    font-weight: bold;
+    /* Optional: to make it stand out */
+    text-align: center;
+    /* Ensures 'X' is centered */
+}
+
+.cart hr {
+    height: 1px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+.cart-bottom {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: max(12vw, 20px);
+}
+
+.cart-total {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+}
+
+.cart-total hr {
+    margin: 10px 0;
+}
+
+.cart-total button {
+    border: none;
+    color: whitesmoke;
+    background-color: tomato;
+    width: max(15vw, 200px);
+    padding: 12px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-total button:hover {
+    background-color: darkred;
+}
+
+.cart-promocode {
+    flex: 1;
+    position: relative;
+}
+
+.cart-promocode p {
+    color: #555;
+}
+
+.cart-promocode-input {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaeaea;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.cart-promocode-input input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.cart-promocode-input button {
+    width: max(10vw, 150px);
+    padding: 12px 5px;
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.cart-promocode-input button:hover {
+    background-color: #333;
+}
+
+.cart-coupons {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: url('https://media.istockphoto.com/id/1200796811/photo/gift-cards-with-red-colored-bow.jpg?b=1&s=612x612&w=0&k=20&c=YdZoa1f-ioS018BXMkve56SqxjbUhGUbNbnPC9jmnz0=') no-repeat center center;
+    background-size: cover;
+    border-radius: 7px;
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    /* Ensure text is readable on the background */
+}
+
+.cart-coupons h3 {
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 189px;
+    color: tomato;
+    /* Ensure text is readable on the background */
+}
+
+.cart-coupons ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-coupons li {
+    margin-left: 189px;
+    color: #170202;
+    /* Ensure text is readable on the background */
+}
+
+@media (max-width: 750px) {
+    .cart-bottom {
+        flex-direction: column-reverse;
+    }
+    .cart-promocode {
+        justify-content: start;
+    }
+    .cart-coupons {
+        top: 70px;
+        /* Adjust for mobile view */
+    }
+}

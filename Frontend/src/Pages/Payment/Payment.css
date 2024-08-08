@@ -1,0 +1,251 @@
+.payment-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.notification {
+    padding: 7px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.notification.success {
+    background-color: #ddffdd;
+    color: #008000;
+    border: 1px solid #008000;
+}
+
+.notification.error {
+    background-color: #ddffdd;
+    color: #008000;
+    border: 1px solid #008000;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: center;
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.payment-button {
+    padding: 10px 20px;
+    font-size: 12px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.paypal-button {
+    background-color: #0070ba;
+}
+
+.paypal-button:hover {
+    background-color: #045388;
+    opacity: 1;
+}
+
+.card-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 9px;
+    opacity: 0.3;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-icon {
+    font-size: 28px;
+    color: #1c0f33;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card-details input {
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+}
+
+.card-number-container {
+    position: relative;
+}
+
+.card-number-input {
+    padding-left: 50px;
+    font-size: 16px;
+}
+
+.card-number-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #0070ba;
+}
+
+.otp-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.get-otp-button {
+    padding: 14px 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #0070ba;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.get-otp-button:hover {
+    background-color: #4ea9e6;
+}
+
+.otp-input {
+    padding: 15px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    width: calc(50% - 10px);
+}
+
+.otp-sent-message {
+    color: green;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.total-amount-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.total-amount-input {
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    text-align: center;
+    font-weight: bold;
+    color: #777373;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pay-button {
+    padding: 15px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #28a745;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.pay-button:hover {
+    background-color: #218838;
+}
+
+.spinner {
+    width: 40px;
+    margin-left: 2%;
+    height: 40px;
+    border-radius: 4px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.dont-refresh-message {
+    font-size: 12px;
+    color: #0d8020;
+    margin-top: 10px;
+}
+
+.mmo {
+    display: flex;
+    gap: 10px;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* COD button specific styles */
+
+.cod-button {
+    background-color: #0070ba;
+}
+
+.cod-button:hover {
+    background-color: #045388;
+    opacity: 1;
+}
