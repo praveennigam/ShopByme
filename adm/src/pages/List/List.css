@@ -1,0 +1,75 @@
+.list-table-format {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 0.3fr;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 1.2rem; /* Adjust padding for larger screens */
+    border: 1px solid #cacaca;
+    background-color: #fff; /* Optional: Add a background color to improve contrast */
+    box-sizing: border-box; /* Ensure padding and border are included in total width and height */
+}
+
+/* Style for title cells */
+.list-table-format .title {
+    background: #f9f9f9;
+    font-weight: bold;
+    padding: 0.5rem; /* Responsive padding for title cells */
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    font-size: 1rem; /* Default font size */
+    white-space: nowrap; /* Ensure titles do not wrap */
+    box-sizing: border-box; /* Ensure padding and border are included in total width and height */
+}
+
+/* Style for image cells */
+.list-table-format img {
+    width: 3rem; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .list-table-format {
+        grid-template-columns: repeat(4, 1fr) 0.5fr;
+        padding: 1rem; /* Adjust padding */
+    }
+    .list-table-format .title {
+        font-size: 0.95rem; /* Slightly reduced font size */
+    }
+}
+
+@media (max-width: 900px) {
+    .list-table-format {
+        grid-template-columns: repeat(3, 1fr) 0.5fr 0.5fr;
+        gap: 1rem; /* Adjust gap for smaller screens */
+        padding: 0.8rem; /* Adjust padding */
+    }
+    .list-table-format .title {
+        font-size: 0.875rem; /* Reduced font size */
+        padding: 0.4rem; /* Adjust padding */
+    }
+}
+
+@media (max-width: 600px) {
+    .list-table-format {
+        grid-template-columns: repeat(2, 1fr) 0.5fr 0.5fr;
+        gap: 1rem; /* Adjust gap */
+        padding: 0.6rem; /* Adjust padding */
+    }
+    .list-table-format .title {
+        font-size: 0.75rem; /* Further reduced font size */
+        padding: 0.3rem; /* Adjust padding */
+    }
+}
+
+@media (max-width: 400px) {
+    .list-table-format {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem; /* Further reduced gap */
+        padding: 0.4rem; /* Adjust padding */
+    }
+    .list-table-format .title {
+        font-size: 0.65rem; /* Further reduced font size */
+        padding: 0.2rem; /* Adjust padding */
+    }
+}

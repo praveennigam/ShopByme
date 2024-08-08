@@ -1,0 +1,41 @@
+.card-details {
+    width: 100%;
+    max-width: 600px;
+    /* Adjust as per your design */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card-text {
+    flex: 1;
+}
+
+.card-label {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .card-list {
+        grid-template-columns: 1fr;
+    }
+}
