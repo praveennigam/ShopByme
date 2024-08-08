@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const FRONTEND_URL = "http://localhost:5173";
+const FRONTEND_URL = "https://user-67cg.onrender.com";
 
 const placeOrder = async(req, res) => {
     const { address, items, amount } = req.body;
