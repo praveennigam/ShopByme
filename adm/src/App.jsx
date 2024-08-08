@@ -13,7 +13,7 @@ import PasswordPrompt from "./PasswordPrompt"; // Import the PasswordPrompt comp
 
 const App = () => {
   const [authenticated, setAuthenticated] = useState(false); // Manage authentication state
-  const url = "http://localhost:4000";
+  const url = "https://e-combypraveen.onrender.com";
 
   if (!authenticated) {
     return <PasswordPrompt onAuthenticated={() => setAuthenticated(true)} />;
