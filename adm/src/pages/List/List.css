@@ -24,10 +24,20 @@
 
 @media (max-width:600px) {
     .list-table-format {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
         gap: 10px;
     }
-    .list-table-format .title {
+    .list-table-format title {
+        display: grid;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        align-items: center;
+        gap: 5px;
+        font-weight: 500;
+        padding: 9px 12px;
+        border: 1px solid #070303;
+        background: #f9f9f9;
+    }
+    .list-table-format title {
         display: none;
     }
 }
