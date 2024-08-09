@@ -1,43 +1,72 @@
 .list-table-format {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr) 0.3fr;
     align-items: center;
     gap: 10px;
-    padding: 12px 15px;
+    padding: 1rem 1.2rem;
     border: 1px solid #cacaca;
+    background-color: #fff;
+    box-sizing: border-box;
 }
 
-.list-table-format title {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
+.list-table-format .title {
     background: #f9f9f9;
+    font-weight: bold;
+    padding: 0.2rem;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    font-size: 1rem;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .list-table-format img {
-    width: 50px;
+    width: 3rem;
+    height: auto;
 }
 
-@media (max-width:600px) {
+@media (max-width: 1200px) {
     .list-table-format {
-        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
-        gap: 10px;
+        grid-template-columns: repeat(4, 1fr) 0.5fr;
+        padding: 1rem;
     }
-    .list-table-format title {
-        display: grid;
-        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
-        align-items: center;
-        gap: 5px;
-        font-weight: 500;
-        padding: 9px 12px;
-        border: 1px solid #070303;
-        background: #f9f9f9;
+    .list-table-format .title {
+        font-size: 0.95rem;
     }
-    .list-table-format title {
-        display: none;
+}
+
+@media (max-width: 900px) {
+    .list-table-format {
+        grid-template-columns: repeat(3, 1fr) 0.5fr 0.5fr;
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+    .list-table-format .title {
+        font-size: 0.875rem;
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .list-table-format {
+        grid-template-columns: repeat(2, 1fr) 0.5fr 0.5fr;
+        gap: 1rem;
+        padding: 0.6rem;
+    }
+    .list-table-format .title {
+        font-size: 0.75rem;
+        padding: 0.3rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .list-table-format {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0.4rem;
+    }
+    .list-table-format .title {
+        font-size: 0.65rem;
+        padding: 0.2rem;
     }
 }
