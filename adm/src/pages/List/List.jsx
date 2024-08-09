@@ -52,6 +52,8 @@ const List = ({ url }) => {
           <b>Name</b>
           <b>Category</b>
           <b>Price</b>
+          <b>Size</b>
+
           <b>Action</b>
         </div>
         {list.map((item, index) => {
@@ -61,6 +63,7 @@ const List = ({ url }) => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>Rs.{item.price}</p>
+              <p>Rs.{item.size}</p>
               <p className="curser" onClick={() => handleRemove(item._id)}>
                 X
               </p>
