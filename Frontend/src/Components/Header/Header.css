@@ -1,223 +1,225 @@
 /* Header styles */
-
 .header {
-    height: 45vw;
-    margin: 10px auto;
-    padding: 0;
-    /* Adjust padding if necessary */
-    position: relative;
-    overflow: hidden;
+  height: 45vw;
+  margin: 10px auto;
+  padding: 0;
+  /* Adjust padding if necessary */
+  position: relative;
+  overflow: hidden;
 }
 
-
 /* Marquee text style */
-
 .marquee {
-    margin-top: 5px;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: #a70404;
-    color: aliceblue;
-    position: relative;
+  margin-top: 5px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  background: linear-gradient(90deg, #7b2450, #002aff, #ff007f); /* Example gradient */
+  background-size: 300% 300%; /* Ensure the gradient is large enough for the animation */
+  animation: bgMove 12s linear infinite;
 }
 
 .marquee p {
-    display: inline-block;
-    animation: marquee 12s linear infinite;
-    font-size: 1.5em;
-    position: relative;
+  display: inline-block;
+  animation: textMove 12s linear infinite, textColorChange 4s linear infinite; /* Animate the text */
+  font-size: 1.5em;
+  position: relative;
+  color: white; /* Default text color */
 }
 
+/* Background Animation for marquee */
+@keyframes bgMove {
+  0% {
+      background-position: 100% 0;
+  }
+  100% {
+      background-position: -100% 0;
+  }
+}
+
+/* Text animation for marquee (scrolling effect) */
+@keyframes textMove {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* Text color animation */
+@keyframes textColorChange {
+  0% {
+      color: #fff;
+  }
+  50% {
+      color: #00f2f7; /* Example of a different color */
+  }
+  100% {
+      color: #fff;
+  }
+}
 
 /* Popup reflection effect */
-
 .marquee p::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    font-size: 1.5em;
-    color: rgba(234, 227, 227, 0.5);
-    text-shadow: 0 1px 1px white;
-    transform: scaleY(-1);
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: -1;
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  font-size: 1.5em;
+  color: rgba(234, 227, 227, 0.5);
+  text-shadow: 0 1px 1px white;
+  transform: scaleY(-1);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
 }
-
-
-/* Keyframes for marquee animation */
-
-@keyframes marquee {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
 
 /* Zoom in/out animation for numbers */
-
 .number {
-    color: #f0f0f0;
-    margin: 4px;
-    display: inline-block;
-    animation: zoom 1s infinite alternate;
+  color: #f0f0f0;
+  margin: 4px;
+  display: inline-block;
+  animation: zoom 1s infinite alternate;
 }
 
 @keyframes zoom {
-    0% {
-        transform: scale(1);
-        color: #14fa10;
-    }
-    100% {
-        transform: scale(1.2);
-        color: #b0f0b0;
-    }
+  0% {
+      transform: scale(1);
+      color: #14fa10;
+  }
+  100% {
+      transform: scale(1.2);
+      color: #b0f0b0;
+  }
 }
-
 
 /* Section 2 styling */
-
 .sec2 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 20px;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
-
 
 /* Carousel container styles */
-
 .carousel,
 .second-carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 0 10px;
-    height: 30vw;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 0 10px;
+  height: 30vw;
 }
-
 
 /* Carousel slides */
-
 .carousel-slide,
 .second-carousel .carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    /* Adjust to ensure full width */
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Adjust to ensure full width */
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
-
 
 /* Active slide */
-
 .carousel-slide.active,
 .second-carousel .carousel-slide.active {
-    opacity: 1;
+  opacity: 1;
 }
 
-
 /* Animation for second carousel */
-
 @keyframes slideIn {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
 }
 
 .second-carousel .carousel-slide.active {
-    animation: slideIn 2s ease-in-out forwards;
+  animation: slideIn 2s ease-in-out forwards;
 }
 
-
 /* Header contents */
-
 .header-contents {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: fadeIn 3s;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
 }
 
 .header-contents h2 {
-    font-weight: 500;
-    color: white;
-    font-size: max(4.5vw, 22px);
+  font-weight: 500;
+  color: white;
+  font-size: max(4.5vw, 22px);
 }
 
 .header-contents p {
-    color: white;
-    font-size: 1vw;
+  color: white;
+  font-size: 1vw;
 }
 
 .header-contents button {
-    border: none;
-    color: #747273;
-    font-weight: 500;
-    padding: 1vw 2.3vw;
-    background-color: white;
-    font-size: max(1vw, 13px);
-    border-radius: 50px;
+  border: none;
+  color: #747273;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: white;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
 }
 
-
 /* Responsive adjustments */
-
 @media (max-width: 1050px) {
-    .header-contents {
-        max-width: 45%;
-    }
+  .header-contents {
+      max-width: 45%;
+  }
 }
 
 @media (max-width: 768px) {
-    .app-download {
-        margin-top: 40px;
-        font-size: max(4vw, 18px);
-    }
-    .app-download-carousel {
-        height: 150px;
-    }
-    .top-img img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
+  .app-download {
+      margin-top: 40px;
+      font-size: max(4vw, 18px);
+  }
+  .app-download-carousel {
+      height: 150px;
+  }
+  .top-img img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+  }
 }
 
 @media (max-width: 480px) {
-    .carousel,
-    .second-carousel {
-        margin-top: 10px;
-        height: 100px;
-    }
-    .top-img {
-        margin-top: 10px;
-    }
-    .top-img img {
-        width: 100%;
-        height: auto;
-    }
+  .carousel,
+  .second-carousel {
+      margin-top: 10px;
+      height: 100px;
+  }
+  .top-img {
+      margin-top: 10px;
+  }
+  .top-img img {
+      width: 100%;
+      height: auto;
+  }
 }

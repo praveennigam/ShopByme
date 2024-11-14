@@ -36,11 +36,14 @@
 }
 
 .explore-menu-list-item img {
-    width: 11.5vw;
-    min-width: 80px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: 0.2s;
+  width: 7.5vw;              /* Width based on viewport width */
+  height: 7.5vw;             /* Height equal to width to make it a perfect circle */
+  min-width: 40px;           /* Ensuring minimum size */
+  min-height: 40px;          /* Ensuring minimum size */
+  cursor: pointer;
+  border-radius: 50%;        /* Make it circular */
+  transition: 0.2s;
+  object-fit: cover;         /* Ensure the image covers the area without distortion */
 }
 
 .explore-menu-list-item p {

@@ -1,6 +1,6 @@
 import { IoBagHandleSharp } from "react-icons/io5";
-import React, { useContext, useState, useRef } from "react";
-import "./Navbar.css";
+import React, { useContext, useState } from "react";
+import "./Navbar.css";  // Assuming styles are still in a CSS file
 import { assets } from "../../assets/assets";
 import {
   FaShoppingBasket,
@@ -18,7 +18,6 @@ function Navbar({ setShowLogin, setCategory }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
   const navigate = useNavigate();
-  const dropdownRef = useRef(null);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -26,55 +25,55 @@ function Navbar({ setShowLogin, setCategory }) {
     navigate("/");
   };
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
-
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <div className="dropdown">
-          <button className="dropdown-toggle" onClick={toggleDropdown}>
-            <FaBars size={20} />
+        <div
+          className="dropdown"
+          onMouseEnter={() => setDropdownOpen(true)}  // Show dropdown on hover
+          onMouseLeave={() => setDropdownOpen(false)} // Hide dropdown when not hovering
+        >
+          <button className="dropdown-toggle">
+
           </button>
-          <div
-            className={`dropdown-menu ${dropdownOpen ? "open" : ""}`}
-            ref={dropdownRef}
-          >
-            <Link
-              to="/"
-              onClick={() => {
-                setMenu("home");
-                setDropdownOpen(false);
-              }}
-              className={menu === "home" ? "active" : ""}
-            >
-              Home
-            </Link>
-            <Link
-              to="/explore"
-              onClick={() => {
-                setMenu("explore");
-                setCategory("All");
-                setDropdownOpen(false);
-              }}
-              className={menu === "explore" ? "active" : ""}
-            >
-              Explore
-            </Link>
-            <Link
-              to="/footer"
-              onClick={() => {
-                setMenu("help");
-                setDropdownOpen(false);
-              }}
-              className={menu === "help" ? "active" : ""}
-            >
-              Help
-            </Link>
-          </div>
+          {dropdownOpen && (
+            <div className="dropdown-menu">
+              <Link
+                to="/"
+                onClick={() => {
+                  setMenu("home");
+                  setDropdownOpen(false);
+                }}
+                className={menu === "home" ? "active" : ""}
+              >
+                Home
+              </Link>
+              <Link
+                to="/explore"
+                onClick={() => {
+                  setMenu("explore");
+                  setCategory("All");
+                  setDropdownOpen(false);
+                }}
+                className={menu === "explore" ? "active" : ""}
+              >
+                Explore
+              </Link>
+              <Link
+                to="/footer"
+                onClick={() => {
+                  setMenu("help");
+                  setDropdownOpen(false);
+                }}
+                className={menu === "help" ? "active" : ""}
+              >
+                Help
+              </Link>
+            </div>
+          )}
         </div>
       </div>
+
       <div className="logo-container">
         <Link
           to="/"
@@ -135,6 +134,7 @@ function Navbar({ setShowLogin, setCategory }) {
           </ul>
         </div>
       </div>
+
       <div className="navbar-right">
         <div className="navbar-cart">
           <Link to="/cart">

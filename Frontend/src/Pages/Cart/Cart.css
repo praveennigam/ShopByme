@@ -1,169 +1,239 @@
+/* Cart Main Container */
 .cart {
-    margin-top: 100px;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
 }
 
+/* Cart Title Row */
 .cart-item-title {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    gap: 10px;
-    color: rgb(152, 152, 152);
-    font-size: max(1vw, 12px);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  gap: 10px;
+  color: rgb(152, 152, 152);
+  font-size: max(1vw, 12px);
+  animation: fadeIn 1s ease-out;
 }
 
+/* Cart Items Row */
 .cart-item-items {
-    margin: 10px 0;
-    color: black;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    align-items: center;
-    gap: 10px;
+  margin: 10px 0;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 1s ease-out;
 }
 
 .cart-item-items img {
-    width: 50px;
-    border-radius: 7px;
+  width: 50px;
+  border-radius: 7px;
+  transition: transform 0.3s ease;
 }
 
+/* Cross button animation */
 .cart-item-items .cross {
-    cursor: pointer;
-    color: red;
-    /* Optional: to highlight the remove button */
-    font-weight: bold;
-    /* Optional: to make it stand out */
-    text-align: center;
-    /* Ensures 'X' is centered */
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
+.cart-item-items .cross:hover {
+  color: darkred; /* Highlight color on hover */
+}
+
+/* Separator line */
 .cart hr {
-    height: 1px;
-    background-color: #e2e2e2;
-    border: none;
+  height: 1px;
+  background-color: #e2e2e2;
+  border: none;
+  animation: fadeIn 1s ease-out;
 }
 
+/* Cart Bottom Section */
 .cart-bottom {
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
-    gap: max(12vw, 20px);
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  gap: max(12vw, 20px);
+  animation: fadeIn 1s ease-out;
 }
 
 .cart-total {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+/* Cart Total Details */
 .cart-total-details {
-    display: flex;
-    justify-content: space-between;
-    color: #666;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
 }
 
 .cart-total hr {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
+/* Cart Total Button */
 .cart-total button {
-    border: none;
-    color: whitesmoke;
-    background-color: tomato;
-    width: max(15vw, 200px);
-    padding: 12px 0;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  border: none;
+  color: whitesmoke;
+  background: linear-gradient(45deg, #2d29a3, #89022d); /* Gradient background */
+  width: max(15vw, 200px);
+  padding: 12px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 40%;
+  margin-bottom: 50px;
+  transition: background-color 0.3s, transform 0.2s ease;
+  animation: bounceIn 1s ease-out;
 }
 
 .cart-total button:hover {
-    background-color: darkred;
+  background: linear-gradient(45deg, #ff6a3d, #fc8f59); /* Darker gradient on hover */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Promocode Section */
 .cart-promocode {
-    flex: 1;
-    position: relative;
+  flex: 1;
+  position: relative;
+  animation: fadeIn 1s ease-out;
 }
 
 .cart-promocode p {
-    color: #555;
+  color: #555;
 }
 
 .cart-promocode-input {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #eaeaea;
-    border-radius: 7px;
-    cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-promocode-input:hover {
+  background-color: #d1d1d1; /* Darker background on hover */
 }
 
 .cart-promocode-input input {
-    background: transparent;
-    border: none;
-    outline: none;
-    padding-left: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding-left: 10px;
 }
 
 .cart-promocode-input button {
-    width: max(10vw, 150px);
-    padding: 12px 5px;
-    background-color: black;
-    border: none;
-    color: white;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+  width: max(10vw, 150px);
+  padding: 12px 5px;
+  background-color: #6c757d;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .cart-promocode-input button:hover {
-    background-color: #333;
+  background-color: #5a6268; /* Darker grey on hover */
 }
 
+/* Cart Coupons Section */
 .cart-coupons {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background: url('https://media.istockphoto.com/id/1200796811/photo/gift-cards-with-red-colored-bow.jpg?b=1&s=612x612&w=0&k=20&c=YdZoa1f-ioS018BXMkve56SqxjbUhGUbNbnPC9jmnz0=') no-repeat center center;
-    background-size: cover;
-    border-radius: 7px;
-    padding: 25px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    color: #fff;
-    /* Ensure text is readable on the background */
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background: url('https://media.istockphoto.com/id/1200796811/photo/gift-cards-with-red-colored-bow.jpg?b=1&s=612x612&w=0&k=20&c=YdZoa1f-ioS018BXMkve56SqxjbUhGUbNbnPC9jmnz0=') no-repeat center center;
+  background-size: cover;
+  border-radius: 7px;
+  padding: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  animation: fadeIn 1s ease-out;
 }
 
 .cart-coupons h3 {
-    margin: 0;
-    margin-top: 5px;
-    margin-left: 189px;
-    color: tomato;
-    /* Ensure text is readable on the background */
+  margin: 0;
+  margin-top: 5px;
+  margin-left: 189px;
+  color: tomato;
+  font-weight: bold;
 }
 
 .cart-coupons ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .cart-coupons li {
-    margin-left: 189px;
-    color: #170202;
-    /* Ensure text is readable on the background */
+  margin-left: 189px;
+  color: #170202;
 }
 
+/* Fade-in animation for various elements */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Bounce-in animation for cart button */
+@keyframes bounceIn {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  60% {
+      opacity: 1;
+      transform: translateY(-10px);
+  }
+  80% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Design for Mobile */
 @media (max-width: 750px) {
-    .cart-bottom {
-        flex-direction: column-reverse;
-    }
-    .cart-promocode {
-        justify-content: start;
-    }
-    .cart-coupons {
-        top: 70px;
-        /* Adjust for mobile view */
-    }
+  .cart-bottom {
+      flex-direction: column-reverse;
+  }
+  .cart-promocode {
+      justify-content: start;
+  }
+  .cart-coupons {
+      top: 70px;
+  }
+  
+  .cart-item-title,
+  .cart-item-items {
+      grid-template-columns: repeat(2, 1fr); /* Stacked grid layout on smaller screens */
+  }
+
+  .cart-total button {
+      width: max(70vw, 150px); /* Button width responsive on small screens */
+  }
+
+  .cart-promocode-input button {
+      width: max(50vw, 120px); /* Adjust the promocode button width */
+  }
 }

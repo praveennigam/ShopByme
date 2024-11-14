@@ -74,7 +74,7 @@ const FoodItem = ({ id, name, price, description, image, sizes }) => {
       addToCart(id, selectedSize);
     }
   };
-
+  console.log(image);
   const handleItemClick = () => {
     setShowFullImage(true);
     setShowDetails(true);
