@@ -3,31 +3,24 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Get the current directory of the file (since __dirname doesn't work in ES Modules)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Controller function to add a food item
 const addFood = async (req, res) => {
   try {
     const { name, description, price, category, sizes } = req.body;
-
-    // Ensure sizes is an array, split by commas and trim any spaces
     const sizesArray = sizes ? sizes.split(',').map(size => size.trim()) : [];
 
-    // Validate required fields
     if (!name || !description || !price || !category || sizesArray.length === 0) {
       return res.status(400).json({ success: false, message: "All fields are required" });
     }
 
-    // Ensure that a file has been uploaded
     if (!req.file) {
       return res.status(400).json({ success: false, message: "Image is required" });
     }
 
     const image_filename = req.file.filename;
 
-    // Create a new food document and save it to the database
     const food = new foodModel({
       name,
       description,
@@ -45,7 +38,6 @@ const addFood = async (req, res) => {
   }
 };
 
-// Controller function to list all food items
 const listFood = async (req, res) => {
   try {
     const foods = await foodModel.find();
@@ -59,7 +51,6 @@ const listFood = async (req, res) => {
   }
 };
 
-// Controller function to remove a food item
 const removeFood = async (req, res) => {
   try {
     const { id } = req.body;
@@ -72,16 +63,13 @@ const removeFood = async (req, res) => {
       return res.status(404).json({ success: false, message: "Food not found" });
     }
 
-    // Delete the image file from the server
     const imagePath = path.join(__dirname, '..', 'uploads', food.image);
 
     fs.stat(imagePath, (err, stats) => {
       if (err || !stats.isFile()) {
-        console.error("Error checking file existence:", err);
-        return;  // If the file doesn't exist, we don't need to try deleting it
+        return;
       }
 
-      // If the file exists, delete it
       fs.unlink(imagePath, (err) => {
         if (err) {
           console.error("Error deleting image file:", err);
@@ -91,7 +79,6 @@ const removeFood = async (req, res) => {
       });
     });
 
-    // Delete the food item from the database
     await foodModel.findByIdAndDelete(id);
     res.json({ success: true, message: "Food deleted successfully" });
   } catch (error) {
