@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -9,6 +10,21 @@
 
 body {
     min-height: 100vh;
+    animation: gradientBackground 10s ease infinite;
+    background: linear-gradient(45deg, #04dd5b, #0072ff, #6a0dad); /* Blue, Purple, Green mix */
+    background-size: 400% 400%;
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 a {
@@ -17,7 +33,7 @@ a {
 }
 
 .app {
-    width: 99%;
+    width: 100%;
     height: auto;
     margin: auto;
 }

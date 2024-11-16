@@ -265,9 +265,10 @@ function PlaceOrder() {
               <b>₹{(getTotalCartAmount() + 30 - discountAmount).toFixed(2)}</b>
             </div>
           </div>
-          <button type="submit" className="total-buttona" disabled={loading}>
+          <button type="submit" className="place-order-button" disabled={loading}>
             {loading ? "Processing..." : "Place Order"}
           </button>
+
         </div>
       </div>
     </form>

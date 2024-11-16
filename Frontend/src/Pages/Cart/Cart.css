@@ -1,65 +1,61 @@
-/* Cart Main Container */
 .cart {
+
   margin-top: 100px;
-  font-family: Arial, sans-serif;
+padding-bottom: 10%;
 }
 
-/* Cart Title Row */
+
+.btn{
+  background: linear-gradient(45deg, #ef7f0f, #89022d);
+}
+
+.btn:hover{
+  background: linear-gradient(45deg, #ff6a3d, #fc8f59);
+}
 .cart-item-title {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   gap: 10px;
   color: rgb(152, 152, 152);
   font-size: max(1vw, 12px);
-  animation: fadeIn 1s ease-out;
 }
 
-/* Cart Items Row */
 .cart-item-items {
   margin: 10px 0;
   color: black;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   gap: 10px;
-  animation: fadeIn 1s ease-out;
 }
 
 .cart-item-items img {
   width: 50px;
   border-radius: 7px;
-  transition: transform 0.3s ease;
 }
 
-/* Cross button animation */
 .cart-item-items .cross {
   cursor: pointer;
   color: red;
+  /* Optional: to highlight the remove button */
   font-weight: bold;
+  /* Optional: to make it stand out */
   text-align: center;
-  transition: color 0.3s ease;
+  /* Ensures 'X' is centered */
 }
 
-.cart-item-items .cross:hover {
-  color: darkred; /* Highlight color on hover */
-}
-
-/* Separator line */
 .cart hr {
   height: 1px;
   background-color: #e2e2e2;
   border: none;
-  animation: fadeIn 1s ease-out;
 }
 
-/* Cart Bottom Section */
 .cart-bottom {
   margin-top: 80px;
   display: flex;
   justify-content: space-between;
   gap: max(12vw, 20px);
-  animation: fadeIn 1s ease-out;
 }
 
 .cart-total {
@@ -69,7 +65,6 @@
   gap: 20px;
 }
 
-/* Cart Total Details */
 .cart-total-details {
   display: flex;
   justify-content: space-between;
@@ -80,31 +75,24 @@
   margin: 10px 0;
 }
 
-/* Cart Total Button */
 .cart-total button {
   border: none;
   color: whitesmoke;
-  background: linear-gradient(45deg, #2d29a3, #89022d); /* Gradient background */
+  background-color: tomato;
   width: max(15vw, 200px);
   padding: 12px 0;
   border-radius: 10px;
   cursor: pointer;
-  margin-left: 40%;
-  margin-bottom: 50px;
-  transition: background-color 0.3s, transform 0.2s ease;
-  animation: bounceIn 1s ease-out;
+  transition: background-color 0.3s;
 }
 
 .cart-total button:hover {
-  background: linear-gradient(45deg, #ff6a3d, #fc8f59); /* Darker gradient on hover */
-  transform: scale(1.05); /* Slight zoom effect */
+  background-color: darkred;
 }
 
-/* Promocode Section */
 .cart-promocode {
   flex: 1;
   position: relative;
-  animation: fadeIn 1s ease-out;
 }
 
 .cart-promocode p {
@@ -119,11 +107,6 @@
   background-color: #eaeaea;
   border-radius: 7px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.cart-promocode-input:hover {
-  background-color: #d1d1d1; /* Darker background on hover */
 }
 
 .cart-promocode-input input {
@@ -136,7 +119,7 @@
 .cart-promocode-input button {
   width: max(10vw, 150px);
   padding: 12px 5px;
-  background-color: #6c757d;
+  background-color: black;
   border: none;
   color: white;
   border-radius: 4px;
@@ -144,10 +127,9 @@
 }
 
 .cart-promocode-input button:hover {
-  background-color: #5a6268; /* Darker grey on hover */
+  background-color: #333;
 }
 
-/* Cart Coupons Section */
 .cart-coupons {
   position: absolute;
   top: 80px;
@@ -161,7 +143,7 @@
   flex-direction: column;
   gap: 10px;
   color: #fff;
-  animation: fadeIn 1s ease-out;
+  /* Ensure text is readable on the background */
 }
 
 .cart-coupons h3 {
@@ -169,7 +151,7 @@
   margin-top: 5px;
   margin-left: 189px;
   color: tomato;
-  font-weight: bold;
+  /* Ensure text is readable on the background */
 }
 
 .cart-coupons ul {
@@ -180,39 +162,9 @@
 .cart-coupons li {
   margin-left: 189px;
   color: #170202;
+  /* Ensure text is readable on the background */
 }
 
-/* Fade-in animation for various elements */
-@keyframes fadeIn {
-  0% {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  100% {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Bounce-in animation for cart button */
-@keyframes bounceIn {
-  0% {
-      opacity: 0;
-      transform: translateY(50px);
-  }
-  60% {
-      opacity: 1;
-      transform: translateY(-10px);
-  }
-  80% {
-      transform: translateY(5px);
-  }
-  100% {
-      transform: translateY(0);
-  }
-}
-
-/* Responsive Design for Mobile */
 @media (max-width: 750px) {
   .cart-bottom {
       flex-direction: column-reverse;
@@ -222,18 +174,6 @@
   }
   .cart-coupons {
       top: 70px;
-  }
-  
-  .cart-item-title,
-  .cart-item-items {
-      grid-template-columns: repeat(2, 1fr); /* Stacked grid layout on smaller screens */
-  }
-
-  .cart-total button {
-      width: max(70vw, 150px); /* Button width responsive on small screens */
-  }
-
-  .cart-promocode-input button {
-      width: max(50vw, 120px); /* Adjust the promocode button width */
+      /* Adjust for mobile view */
   }
 }

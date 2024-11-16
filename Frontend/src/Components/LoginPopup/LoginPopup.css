@@ -1,24 +1,26 @@
 /* Main Login Popup Styles */
 .login-popup {
-  position: fixed; /* Fixed position for better visibility */
-  z-index: 1000; /* Ensure the popup appears on top of all content */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Dark overlay with opacity */
+  background: rgba(0, 0, 0, 0.7);
   display: grid;
   justify-items: center;
   align-items: center;
-  backdrop-filter: blur(8px); /* Optional blur for background */
-  animation: fadeInOverlay 0.5s ease-out forwards; /* Fade-in effect for overlay */
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  animation: fadeInOverlay 0.5s ease-out forwards;
 }
 
-/* Animation for the dark overlay */
+/* Overlay Fade-in Animation */
 @keyframes fadeInOverlay {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -29,26 +31,38 @@
   gap: 25px;
   padding: 30px 35px;
   border-radius: 12px;
-  background: linear-gradient(145deg, #6a11cb, #2575fc, #00d2ff); /* Blue, Purple, Green Gradient */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  width: max(23vw, 330px); /* Maintain original width (330px) */
+  background: linear-gradient(145deg, #6a11cb, #2575fc, #00d2ff);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: max(23vw, 330px);
   max-width: 100%;
   color: #ffffff;
   font-size: 16px;
-  opacity: 0; /* Initial opacity for fade-in */
-  transform: translateY(-20px); /* Initial position for animation */
-  animation: fadeInContainer 0.7s ease-out forwards; /* Popup container fade-in */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideInPopup 0.7s ease-out forwards; /* Open animation */
 }
 
-/* Animation for the container */
-@keyframes fadeInContainer {
+/* Open Popup Slide-in Animation */
+@keyframes slideInPopup {
   0% {
-      opacity: 0;
-      transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Popup Slide-out Animation */
+@keyframes slideOutPopup {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }
 
@@ -69,7 +83,7 @@
 }
 
 .login-popup-title img:hover {
-  transform: scale(1.2); /* Hover effect on the close icon */
+  transform: scale(1.2);
 }
 
 /* Input Fields */
@@ -79,34 +93,32 @@
   gap: 15px;
 }
 
-/* Styling for each input field */
 .login-popup-inputs input {
   outline: none;
   padding: 12px;
   border-radius: 8px;
   font-size: 14px;
-  transition: all 0.3s ease;
-  background: linear-gradient(135deg, #00d2ff, #2575fc); /* Light Blue Gradient Background */
+  background: linear-gradient(135deg, #00d2ff, #2575fc);
   color: white;
   border: 1px solid transparent;
-  animation: fadeInInput 0.7s ease-out forwards; /* Input field fade-in */
+  animation: fadeInInput 0.7s ease-out forwards;
 }
 
 /* Input focus animation */
 .login-popup-inputs input:focus {
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Darker gradient on focus */
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); /* Glow effect on focus */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
   border: 1px solid #fff;
 }
 
 @keyframes fadeInInput {
   0% {
-      opacity: 0;
-      transform: translateX(-10px);
+    opacity: 0;
+    transform: translateX(-10px);
   }
   100% {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -116,29 +128,27 @@
   padding: 12px;
   border-radius: 7px;
   color: white;
-  background: linear-gradient(135deg, #00d2ff, #2575fc); /* Gradient background */
+  background: linear-gradient(135deg, #00d2ff, #2575fc);
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
-  animation: fadeInButton 0.7s ease-out forwards; /* Button fade-in */
+  animation: fadeInButton 0.7s ease-out forwards;
 }
 
-/* Button hover effect */
-.login-popup-container button:hover {
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Darker gradient on hover */
-  transform: scale(1.05); /* Slight zoom effect on hover */
-}
-
-/* Button animation */
 @keyframes fadeInButton {
   0% {
-      opacity: 0;
-      transform: translateY(10px);
+    opacity: 0;
+    transform: translateY(10px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.login-popup-container button:hover {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transform: scale(1.05);
 }
 
 /* Checkbox and Terms Conditions Styling */
@@ -160,86 +170,55 @@
 }
 
 /* Responsive Styles */
-
-/* Small Screen Sizes (Mobile) */
 @media (max-width: 480px) {
   .login-popup-container {
-      width: 85%;
-      padding: 20px 25px;
+    width: 85%;
+    padding: 20px 25px;
   }
 
   .login-popup-title {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   .login-popup-inputs input {
-      font-size: 14px;
-      padding: 10px;
+    font-size: 14px;
+    padding: 10px;
   }
 
   .login-popup-container button {
-      padding: 10px;
-      font-size: 14px;
+    padding: 10px;
+    font-size: 14px;
   }
 
   .login-popup-condition {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-/* Medium Screen Sizes (Tablets) */
 @media (max-width: 768px) {
   .login-popup-container {
-      width: 80%;
-      padding: 25px 30px;
+    width: 80%;
+    padding: 25px 30px;
   }
 
   .login-popup-title {
-      font-size: 17px;
+    font-size: 17px;
   }
 
   .login-popup-inputs input {
-      font-size: 15px;
-      padding: 12px;
+    font-size: 15px;
+    padding: 12px;
   }
 
   .login-popup-container button {
-      padding: 12px;
-      font-size: 15px;
+    padding: 12px;
+    font-size: 15px;
   }
 }
 
-/* Larger Screen Sizes (Desktops) */
 @media (min-width: 1024px) {
   .login-popup-container {
-      width: max(23vw, 330px); /* Maintain the original width (330px) */
-  }
-}
-
-/* Spinner Styles (when loading) */
-.spinner {
-  position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 10px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  border-top: 6px solid rgb(14, 14, 21); /* Dark color */
-  border-right: 6px solid rgb(243, 248, 243); /* Light color */
-  border-bottom: 6px solid rgb(12, 9, 9); /* Red color */
-  border-left: 6px solid rgb(198, 198, 192); /* Yellow color */
-  width: 60px;
-  height: 60px;
-  animation: spin 1.2s linear infinite;
-  z-index: 3;
-}
-
-@keyframes spin {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
+    width: max(23vw, 330px);
   }
 }

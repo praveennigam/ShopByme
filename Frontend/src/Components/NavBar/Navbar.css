@@ -65,7 +65,7 @@
   z-index: 2;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-20px);  /* Initially, position above */
+  transform: translateY(-20px); /* Initially, position above */
   transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease;
 }
 
@@ -140,7 +140,8 @@
 /* Cart icon with dot */
 .navbar-cart {
   position: relative;
-  color: #0a3174f8;
+  color: #fff;
+  cursor: pointer;
 }
 
 .navbar-cart .dot {
@@ -174,6 +175,7 @@
   transform: translateY(-5px); /* Button rise effect */
 }
 
+/* Active menu item */
 .navbar .active {
   padding-bottom: 3px;
   color: #1abc9c;
@@ -267,5 +269,28 @@
   }
   .navbar .logo {
     width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo {
+    width: 120px; /* Reduced logo size */
+  }
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-left {
+    display: none; /* Hide left items for mobile */
+  }
+  .navbar-right {
+    gap: 10px;
+  }
+  .navbar-right button {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+  .navbar-cart {
+    display: block;
+    font-size: 20px;
   }
 }

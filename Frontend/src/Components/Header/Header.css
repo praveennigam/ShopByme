@@ -1,9 +1,8 @@
 /* Header styles */
 .header {
-  height: 45vw;
+  height: 45vw; /* Maintain header height as a percentage of the viewport width */
   margin: 10px auto;
   padding: 0;
-  /* Adjust padding if necessary */
   position: relative;
   overflow: hidden;
 }
@@ -20,11 +19,12 @@
   background: linear-gradient(90deg, #7b2450, #002aff, #ff007f); /* Example gradient */
   background-size: 300% 300%; /* Ensure the gradient is large enough for the animation */
   animation: bgMove 12s linear infinite;
+  height: 8vh; /* Set marquee height relative to viewport height */
 }
 
 .marquee p {
   display: inline-block;
-  animation: textMove 12s linear infinite, textColorChange 4s linear infinite; /* Animate the text */
+  animation: textMove 12s linear infinite, textColorChange 4s linear infinite;
   font-size: 1.5em;
   position: relative;
   color: white; /* Default text color */
@@ -124,7 +124,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* Adjust to ensure full width */
   height: 100%;
   background-size: cover;
   background-position: center;
@@ -192,6 +191,10 @@
   .header-contents {
       max-width: 45%;
   }
+
+  .marquee {
+    height: 10vh; /* Slightly increase marquee height on medium screens */
+  }
 }
 
 @media (max-width: 768px) {
@@ -207,6 +210,10 @@
       height: auto;
       object-fit: contain;
   }
+
+  .marquee {
+    height: 5vh; /* Increase height for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
@@ -221,5 +228,28 @@
   .top-img img {
       width: 100%;
       height: auto;
+  }
+
+  .marquee {
+    height: 8vh; 
+  }
+
+  .header-contents {
+    max-width: 80%;
+    bottom: 20%;
+    left: 5vw;
+  }
+
+  .header-contents h2 {
+    font-size: max(8vw, 20px);
+  }
+
+  .header-contents p {
+    font-size: max(3vw, 16px);
+  }
+
+  .header-contents button {
+    padding: 3vw 4vw;
+    font-size: max(3vw, 18px);
   }
 }

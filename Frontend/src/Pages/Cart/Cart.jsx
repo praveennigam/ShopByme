@@ -80,7 +80,7 @@ function Cart() {
               <b>₹{getFinalTotalAmount()}</b>
             </div>
           </div>
-          <button onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
+          <button className="btn" onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
         </div>
       </div>
     </div>
