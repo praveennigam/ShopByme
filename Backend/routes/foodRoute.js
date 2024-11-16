@@ -3,12 +3,17 @@ import multer from 'multer';
 import path from 'path';
 import { addFood, listFood, removeFood } from '../controllers/foodController.js';
 
-const foodRouter = express.Router();
+// Create the uploads directory if it doesn't exist
+import fs from 'fs';
+const uploadDir = path.join(__dirname, '../uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 // Define storage engine for multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Specify the directory where files will be stored
+    cb(null, uploadDir); // Specify the directory where files will be stored
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}${path.extname(file.originalname)}`); // Rename file to avoid conflicts
@@ -43,10 +48,10 @@ foodRouter.use('/uploads', express.static('uploads'));
 // Route for adding food with image upload
 foodRouter.post("/add", upload.single("image"), addFood);
 
-// Route for listing all food items (assumes the listFood controller exists)
+// Route for listing all food items
 foodRouter.get('/list', listFood);
 
-// Route for removing a food item (assumes the removeFood controller exists)
+// Route for removing a food item
 foodRouter.post('/remove', removeFood);
 
 export default foodRouter;

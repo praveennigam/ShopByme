@@ -1,6 +1,11 @@
 import foodModel from "../models/foodModel.js";
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Get the current directory of the file (since __dirname doesn't work in ES Modules)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Controller function to add a food item
 const addFood = async (req, res) => {
