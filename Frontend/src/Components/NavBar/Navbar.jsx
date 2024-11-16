@@ -144,11 +144,11 @@ function Navbar({ setShowLogin, setCategory }) {
         </div>
         {!token ? (
           <button onClick={() => setShowLogin(true)}>
-            <FaUser size={25} />
+            <FaUser size={15} />
           </button>
         ) : (
           <div className="navbar-profile">
-            <FaUser size={25} />
+            <FaUser size={15} />
             <ul className="nav-profile-dropdown">
               <li onClick={() => navigate("/myorders")}>
                 <FaShoppingBag size={20} />

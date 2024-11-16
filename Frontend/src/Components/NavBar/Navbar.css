@@ -156,10 +156,10 @@
 
 /* Advanced button styles */
 .navbar-right button {
-  background: linear-gradient(135deg, #ff5722, #740350);
+  color:  #740350;
   font-size: 18px;
-  color: #fff;
-  padding: 16px 16px;
+  background-color: none;
+  
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -293,4 +293,35 @@
     display: block;
     font-size: 20px;
   }
+}
+
+/* Advanced button styles */
+.navbar-right button {
+  color: #f0cfe6; /* Text color */
+  font-size: 18px;
+  background-color: transparent; /* No background */
+  
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 10px 20px; /* Add some padding for a more clickable area */
+  text-transform: uppercase; /* Make text uppercase for modern effect */
+  font-weight: 600; /* Make text bold */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Button hover effect */
+.navbar-right button:hover {
+  background: linear-gradient(135deg, #c2e34b, #960941); /* Gradient background on hover */
+  color: #fff; /* Change text color to white when hovered */
+  transform: translateY(-5px); /* Button rise effect */
+  border-color: #ff5722; /* Change border color to match hover gradient */
+}
+
+/* Button focus effect */
+.navbar-right button:focus {
+  outline: none; /* Remove outline */
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2); /* Add a subtle glowing effect when focused */
 }
